@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <title> Agendar Consulta</title>
+    </head>
+    <body>
+        <nav>
+            <div id="nav-logo">Logo</div>
+            <div id="nav-menu">
+                <a href="#">cadastrar</a>
+                <a href="form-agendar-consulta.html">agendar consulta</a>
+                <a href="#">gestão de horários</a>
+            </div>
+            <a href="#" id="nav-login">Login</a>
+        </nav>
+
+        <section>
+            <div id="card">
+                <h1> Agendar Consulta </h1>
+                <div id="form">
+                    <form>
+                        <div id="campo">
+                            <label for="especialidade">Selecione a especialidade:</label><br>                        
+                            <select name="especialidade" id="especialidade">
+                                <option value="0" disabled>Selecione...</option>
+                                <option value="1">Cardiologista</option>
+                                <option value="2">Dentista</option>
+                            </select>
+                        </div>
+                        <div id="campo">
+                            <label for="medico">Selecione o médico:</label><br>
+                            <select name="medico" id="medico">
+                                <option value="0" disabled>Selecione...</option>
+                                <option value="1">Sâmily Goes</option>
+                                <option value="2">Raphael Costa</option>
+                                <option value="3">Rhayan Adriell</option>
+                            </select>
+                        </div>
+                        <div id="campo">
+                            <label for="data-consulta">Data da consulta:</label><br>
+                            <input type="date" id="data-consulta" name="data-consulta">
+                        </div>
+                        <div id="campo">
+                            <label for="hora-consulta">Horário da consulta:</label><br>
+                            <input type="text" id="hora-consulta" name="hora-consulta">
+                        </div>
+                        <div id="campo">
+                            <label for="cpf-paciente">CPF do paciente:</label><br>
+                            <input type="text" id="cpf-paciente" name="cpf-paciente">
+                        </div>
+                        <div id="campo">
+                            Selecione o tipo da consulta:<br>
+                            <input type="radio" id="convenio-consulta" name="tipo-consulta" value="convenio" checked><label for="convenio-consulta">Convênio</label>
+                            <input type="radio" id="particular-consulta" name="tipo-consulta" value="particular"><label for="particular-consulta">Particular</label>
+                        </div>
+                        <div id="campo">
+                            <input type="submit" id="enviar" name="submit-consulta" value="AGENDAR">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,5 +1,5 @@
-CREATE DATABASE db_clinica;
-USE db_clinica;
+CREATE DATABASE bd_hospital;
+USE bd_hospital;
 
 CREATE TABLE tb_pessoa(
 	id_pessoa INT PRIMARY KEY AUTO_INCREMENT,

@@ -226,6 +226,57 @@ class Pessoa{
         return $this->numCarteiraConvenio;
     }
 
+    public function validaCpf($cpf)
+    {
+        $vetorCpf = array();
+        $num = 0;
+        $digito1 = 0;
+        $digito2 = 0;
+
+        // TIRANDO PONTO E TRAÇO 
+        $cpf = str_replace(".", "", $cpf);
+        $cpf = str_replace("-", "", $cpf);
+
+        // TRANSFORMANDO CPF EM VETOR 
+        for($i = 0; $i <= 10; $i++)
+        {
+            $num = substr($cpf, $i, 1);
+            $vetorCpf[$i] = intval($num);
+        }        
+        // LAÇO 1° DIGITO 
+        for($i = 0, $j = 10; $i <= 8; $i++, $j--)
+        {
+            $digito1 += $vetorCpf[$i] * $j;
+        }    
+         // LAÇO 2° DIGITO 
+         for($i = 0, $j = 11; $i <= 8; $i++, $j--)
+         {
+             $digito2 += $vetorCpf[$i] * $j;  
+         }
+              
+        // TESTE DO 1° DIGITO 
+        $digito1 = $digito1 % 11; 
+        
+        if($digito1 < 2) { $digito1 = 0; }
+        else { $digito1 = 11 - $digito1; }
+    
+         // TESTE 2° DIGITO 
+        $digito2 += ($digito1 * 2) % 11;
+         
+        if($digito2 < 2) { $digito2 = 0; }
+        else { $digito2 = 11 - ($digito2 % 11); }
+    
+        //VERIFICAÇÃO CPF 
+        if ($vetorCpf[9] == $digito1 && $vetorCpf[10] == $digito2)
+        {
+            echo("<br> CPF válido");
+            return true;
+        }
+        //echo("<br> CPF inválido");
+        echo("<script> alert('CPF inválido'); </script>");
+        return false;
+    }
+   
 }
 
 

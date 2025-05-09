@@ -5,7 +5,7 @@ class Conexao{
     {
         try
         {
-            $conexao = new PDO("mysql:host=localhost; dbname=db_clinica", "root", "");
+            $conexao = new PDO("mysql:host=localhost; dbname=bd_hospital", "root", "");
             $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conexao;
         }

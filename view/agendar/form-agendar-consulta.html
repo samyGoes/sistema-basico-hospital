@@ -10,9 +10,9 @@
         <nav>
             <div id="nav-logo">Logo</div>
             <div id="nav-menu">
-                <a href="#">cadastrar</a>
+                <a href="../cadastrar/opcoes-de-cadastro.html">cadastrar</a>
                 <a href="form-agendar-consulta.html">agendar consulta</a>
-                <a href="#">gestão de horários</a>
+                <a href="../gestao-horario/gestao-horario.php">gestão de horários</a>
             </div>
             <a href="#" id="nav-login">Login</a>
         </nav>
@@ -45,7 +45,7 @@
                         </div>
                         <div id="campo">
                             <label for="hora-consulta">Horário da consulta:</label><br>
-                            <input type="text" id="hora-consulta" name="hora-consulta">
+                            <input type="time" id="hora-consulta" name="hora-consulta">
                         </div>
                         <div id="campo">
                             <label for="cpf-paciente">CPF do paciente:</label><br>
@@ -56,9 +56,9 @@
                             <input type="radio" id="convenio-consulta" name="tipo-consulta" value="convenio" checked><label for="convenio-consulta">Convênio</label>
                             <input type="radio" id="particular-consulta" name="tipo-consulta" value="particular"><label for="particular-consulta">Particular</label>
                         </div>
-                        <div id="campo">
+                        <div id="campo" class="campo-btn">
                             <input type="submit" id="enviar" name="submit-consulta" value="AGENDAR">
-                            <a href="pagamento.html" id="btn-continuar">CONTINUAR</a>
+                            <button type="submit"> <a href="pagamento.html" id="btn-continuar">CONTINUAR</a></button>
                         </div>
                     </form>
                 </div>

@@ -1,0 +1,24 @@
+table
+{
+    border: 1px solid #000;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th 
+{ 
+    border: 1px solid #000; 
+    text-align: center; 
+    padding: .4rem;
+}
+
+#card { padding: 40px !important; }
+
+.campo-gestao-horario 
+{ 
+    display: flex;
+    align-items: flex-end;
+    width: 71% !important;
+}
+
+.campo-gestao-horario p { gap: 1.5rem; }

@@ -1,0 +1,171 @@
+<?php
+require_once("../../model/Especialidade.php");
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <title>Cadastrar Médicos</title>
+</head>
+
+<body>
+    <nav>
+        <div id="nav-logo">Logo</div>
+        <div id="nav-menu">
+            <a href="opcoes-de-cadastro.html">cadastrar</a>
+            <a href="../agendar/form-agendar-consulta.html">agendar consulta</a>
+            <a href="../gestao-horario/gestao-horario.php">gestão de horários</a>
+        </div>
+        <a href="#" id="nav-login">Login</a>
+    </nav>
+
+    <section>
+        <div id="card">
+            <h1> Cadastrar Médicos </h1>
+            <div id="form">
+                <form action="../../controller/controller-cadastrar-medicos.php" method="post">
+                    <div id="campo">
+                        <label for="nome">*Nome:</label><br>
+                        <input type="text" id="nome" name="nome">
+                    </div>
+                    <div id="campo">
+                        <label for="rg">*RG:</label><br>
+                        <input type="text" id="rg" name="rg">
+                    </div>
+                    <div id="campo">
+                        <label for="cpf">*CPF:</label><br>
+                        <input type="text" id="cpf" name="cpf">
+                    </div>
+                    <div id="campo">
+                        <label for="sexo">*Sexo:</label><br>
+                        <select name="sexo" id="sexo">
+                            <option value="0" disabled>Selecione...</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Intersexo">Intersexo</option>
+                            <option value="Prefiro Não Informar">Prefiro Não Informar</option>
+                        </select>
+                    </div>
+                    <div id="campo">
+                        <label for="genero">*Gênero:</label><br>
+                        <select name="genero" id="genero">
+                            <option value="0" disabled>Selecione...</option>
+                            <option value="Homem Cisgênero">Homem Cisgênero</option>
+                            <option value="Mulher Cisgênero">Mulher Cisgênero</option>
+                            <option value="Homem Trans">Homem Trans</option>
+                            <option value="Mulher Trans">Mulher Trans</option>
+                            <option value="Pessoa Não-Binária">Pessoa Não-Binária</option>
+                            <option value="Outro">Outro</option>
+                            <option value="Prefiro Não Informar">Prefiro Não Informar</option>
+                        </select>
+                    </div>
+                    <div id="campo">
+                        <label for="data-consulta">*Data De Nascimento:</label><br>
+                        <input type="date" id="data-de-nascimento" name="data-de-nascimento">
+                    </div>
+                    <div id="campo">
+                        <label for="cep">*CEP:</label><br>
+                        <input type="text" id="cep" name="cep" onblur="pesquisa_cep(this.value);">
+                    </div>
+                    <div id="campo">
+                        <label for="numero-logradouro">*Número Do Logradouro (Rua/Avenida):</label><br>
+                        <input type="text" id="numero-logradouro" name="numero-logradouro">
+                    </div>
+                    <div id="campo">
+                        <label for="nome-logradouro">*Nome Logradouro (Rua/Avenida):</label><br>
+                        <input type="text" id="nome-logradouro" name="nome-logradouro">
+                    </div>
+                    <div id="campo">
+                        <label for="bairro">*Bairro:</label><br>
+                        <input type="text" id="bairro" name="bairro">
+                    </div>
+                    <div id="campo">
+                        <label for="ciade">*Cidade:</label><br>
+                        <input type="text" id="cidade" name="cidade">
+                    </div>
+                    <div id="campo">
+                        <label for="estado">*Estado:</label><br>
+                        <input type="text" id="estado" name="estado">
+                    </div>
+                    <div id="campo">
+                        <label for="crm">*CRM:</label><br>
+                        <input type="text" id="crm" name="crm">
+                    </div>
+                    <div id="campo">
+                        <label for="especialidade">Selecione Uma Especialidade:</label><br>
+                        <select name="especialidade" id="especialidade">
+                        <?php
+                            $especialidade = new Especialidade();
+                            $lista = $especialidade->listar();
+                        
+                            foreach($lista as $l)
+                            {
+                        ?>
+                                <option value="<?php echo $l["id_especialidade"]; ?>">
+                                    <?php echo $l["desc_especialidade"]; ?>
+                                </option>
+                        <?php
+                            }
+                        ?>
+                        </select>
+                    </div>
+                    <div id="campo">
+                        <label for="telefone1">*Telefone 1:</label><br>
+                        <input type="text" id="telefone1" name="telefone1">
+                    </div>
+                    <div id="campo">
+                        <label for="telefone2">*Telefone 2 (opcional):</label><br>
+                        <input type="text" id="telefone2" name="telefone2">
+                    </div>
+                    <div id="campo">
+                        <label for="nome-convenio">*Nome Do Convênio:</label><br>
+                        <input type="text" id="nome-convenio" name="nome-convenio">
+                    </div>
+                    <div id="campo">
+                        <label for="carteirinha-convenio">*N° Da Carteirinha Do Convênio:</label><br>
+                        <input type="text" id="carteirinha-convenio" name="carteirinha-convenio">
+                    </div>
+                    <div id="campo">
+                        <label for="email">*Email:</label><br>
+                        <input type="text" id="email" name="email">
+                    </div>
+                    <div id="campo">
+                        <label for="senha">*Senha:</label><br>
+                        <input type="text" id="senha" name="senha">
+                    </div>
+                    <div id="campo">
+                        <label for="confi-senha">*Confirmar Senha:</label><br>
+                        <input type="text" id="confi-senha" name="confi-senha">
+                    </div>
+                    <!-- DIV fantasma dog -->
+                    <div id="campo" style="opacity: 0%;">
+                        <label for=""></label><br>
+                        <input type="text" id="" name="">
+                    </div>
+                    <div id="campo" class="campo-btn">
+                        <input type="submit" name="submit-consulta" value="CADASTRAR">
+                            <a id="voltar" href="opcoes-de-cadastro.html">Voltar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <?php
+        if(isset($_GET["cadastro"]))
+        {
+            if(isset($_GET["cadastro"]) == "sucesso") 
+            { echo("<script>alert('Cadastro feito com sucesso!');</script>"); }
+        }
+    ?>
+
+    <script src="../../assets/js/script.js"></script>
+    <script src="../../assets/js/cep-auto.js"></script>
+</body>
+
+</html>

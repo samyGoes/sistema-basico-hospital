@@ -82,6 +82,16 @@ CREATE TABLE tb_agenda(
 	CONSTRAINT fk_consultaAgenda FOREIGN KEY (id_consulta) REFERENCES tb_consulta(id_consulta)
 );
 
+CREATE TABLE tb_horariosMedico
+(
+	id_hm INT PRIMARY KEY AUTO_INCREMENT,
+	horario_hm TIME,
+	id_medico INT,
+
+	CONSTRAINT fk_medicoHorario FOREIGN KEY (id_medico) REFERENCES tb_medico(id_medico)
+);
+
+
 
 
  INSERT INTO tb_pessoa(nome_pessoa, rg_pessoa, cpf_pessoa, sexo_pessoa, genero_pessoa, data_nasc_pessoa, logradouro_pessoa, num_log_pessoa, cep_pessoa, bairro_pessoa, cidade_pessoa, estado_pessoa, email_pessoa, senha_pessoa, pcd_pessoa, convenio_pessoa)

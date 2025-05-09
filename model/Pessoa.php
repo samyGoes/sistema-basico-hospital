@@ -273,7 +273,7 @@ class Pessoa{
             return true;
         }
         //echo("<br> CPF inválido");
-        echo("<script> alert('CPF inválido'); </script>");
+        echo("<script> alert('CPF inválido.'); </script>");
         return false;
     }
    

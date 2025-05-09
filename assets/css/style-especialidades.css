@@ -1,0 +1,29 @@
+#card
+{
+    width: 32rem !important;
+    padding: 40px;
+}
+
+form { flex-direction: column !important; }
+
+#campo
+{
+    width: 100%;
+    gap: .6rem;
+    margin-bottom: 0;
+}
+
+.campo-especialidade
+{
+    align-items: flex-start !important;
+    margin-bottom: 1.5rem !important;
+}
+
+input[type="text"] { width: 100%; }
+input[type="submit"] { margin-right: 0 !important; }
+#voltar { margin-right: 0 !important; }
+
+@media (max-width: 1400px)
+{
+    #card {  width: 27rem !important; }
+}

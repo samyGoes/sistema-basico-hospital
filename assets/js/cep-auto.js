@@ -10,7 +10,7 @@ function meu_callback(conteudo)
 {
     if(!("erro" in conteudo))
     {
-        document.querySelector("#logradouro").value=(conteudo.logradouro);
+        document.querySelector("#nome-logradouro").value=(conteudo.logradouro);
         document.querySelector("#bairro").value=(conteudo.bairro);
         document.querySelector("#cidade").value=(conteudo.cidade);
         document.querySelector("#estado").value=(conteudo.estado);

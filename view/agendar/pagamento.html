@@ -3,9 +3,129 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <link rel="stylesheet" href="../../assets/css/style.css">
+        <link rel="stylesheet" href="../../assets/css/style-pagamento.css">
+        <title>Pagamento</title>
     </head>
     <body>
         
+        <nav>
+            <div id="nav-logo">Logo</div>
+            <div id="nav-menu">
+                <a href="../../index.html">início</a>
+                <a href="../cadastrar/opcoes-de-cadastro.html">cadastrar</a>
+                <a href="form-agendar-consulta.php">agendar consulta</a>
+                <a href="../gestao-horario/gestao-horario.php">gestão de horários</a>
+            </div>
+            <a href="#" id="nav-login">Login</a>
+        </nav>
+
+        <section>
+            <div id="card">
+                <h1> Pagamento </h1>
+                <div id="form">
+
+                    <div id="campo" class="campo-formas-pagamento">
+                        <label for="especialidade">Selecione a forma de pagamento:</label><br>    
+                        <div id="opcoes-pagamento">
+                            <span id="pix"> PIX </span>
+                            <span id="boleto"> Boleto </span>
+                            <span id="cartao-credito"> Cartão de Crédito </span>
+                            <span id="cartao-debito"> Cartão de Débito </span>
+                        </div>                    
+                    </div>
+                    <form id="form-pix">
+                        <p> Clique em finalizar pagamento para gerar o QR Code. </p>
+                        <div id="campo" class="campo-btn">
+                            <input type="submit" id="enviar" name="submit-consulta" value="FINALIZAR PAGAMENTO">
+                            <a id="voltar" href="form-agendar-consulta.php">Voltar</a>
+                        </div>
+                    </form>
+
+                    <form id="form-boleto">
+                        <p> 
+                            O boleto bancário será exibido após a confirmação do pagamento e poderá ser impresso 
+                            para pagamanto em qualquer agência bancária, ou ter o número anotado para pagamento
+                            pelo telefone ou internet. 
+                        </p>
+                        <div id="campo" class="campo-btn">
+                            <input type="submit" id="enviar" name="submit-consulta" value="FINALIZAR PAGAMENTO">
+                            <a id="voltar" href="form-agendar-consulta.php">Voltar</a>
+                        </div>
+                    </form>
+
+                    <form id="form-cartao-credito">            
+                        <div id="campo">
+                            <label for="num-cartao">Número do cartão:</label><br>
+                            <input type="text" id="num-cartao" name="num-cartao">
+                        </div>
+                        <div id="campo">
+                            <label for="bandeira-cartao">Selecione a bandeira do cartão:</label><br>
+                            <select name="bandeira-cartao" id="bandeira-cartao">
+                                <option value="0" disabled>Selecione...</option>
+                                <option value="1">MasterCard</option>
+                                <option value="2">Nubank</option>
+                            </select>
+                        </div>
+                        <div id="campo">
+                            <label for="nome-impresso">Nome impresso no cartão:</label><br>
+                            <input type="text" id="nome-impresso" name="nome-impresso">
+                        </div>
+                        <div id="campo">
+                            <label for="validade">Validade:</label><br>
+                            <p>
+                                <input type="text" id="mes-validade" name="mes-validade" placeholder="Mês">
+                                <input type="text" id="ano-validade" name="ano-validade" placeholder="Ano">
+                            </p>
+                        </div>
+                        <div id="campo">
+                            <label for="cod-seguranca">Código de segurança:</label><br>
+                            <input type="text" id="cod-seguranca" name="cod-seguranca">
+                        </div>
+                        <div id="campo" class="campo-btn">
+                            <input type="submit" id="enviar" name="submit-consulta" value="FINALIZAR PAGAMENTO">
+                            <a id="voltar" href="form-agendar-consulta.php">Voltar</a>
+                        </div>
+                    </form>
+
+                    <form id="form-cartao-debito">            
+                        <div id="campo">
+                            <label for="num-cartao">Número do cartão:</label><br>
+                            <input type="text" id="num-cartao" name="num-cartao">
+                        </div>
+                        <div id="campo">
+                            <label for="bandeira-cartao">Selecione a bandeira do cartão:</label><br>
+                            <select name="bandeira-cartao" id="bandeira-cartao">
+                                <option value="0" disabled>Selecione...</option>
+                                <option value="1">MasterCard</option>
+                                <option value="2">Nubank</option>
+                            </select>
+                        </div>
+                        <div id="campo">
+                            <label for="nome-impresso">Nome impresso no cartão:</label><br>
+                            <input type="text" id="nome-impresso" name="nome-impresso">
+                        </div>
+                        <div id="campo">
+                            <label for="validade">Validade:</label><br>
+                            <p>
+                                <input type="text" id="mes-validade" name="mes-validade" placeholder="Mês">
+                                <input type="text" id="ano-validade" name="ano-validade" placeholder="Ano">
+                            </p>
+                        </div>
+                        <div id="campo">
+                            <label for="cod-seguranca">Código de segurança:</label><br>
+                            <input type="text" id="cod-seguranca" name="cod-seguranca">
+                        </div>
+                        <div id="campo" class="campo-btn">
+                            <input type="submit" id="enviar" name="submit-consulta" value="FINALIZAR PAGAMENTO">
+                            <a id="voltar" href="form-agendar-consulta.php">Voltar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <script src="../../assets/js/formas-pagamento.js"></script>
     </body>
 </html>

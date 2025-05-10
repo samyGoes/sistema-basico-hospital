@@ -1,86 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-/*importa legal dog*/
-
-*{
-    border: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-}
-
-body
-{
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-nav{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-    height: 134px;
-    background: #8178D4;
-}
- #nav-logo{
-    font-size: 64px;
-    color: #ffffff;
-    margin-left: 51px;
-    margin-top: 19;
- }
-
-#nav-menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 50%;
-}
-
-a{
-    color: #ffffff;
-    font-size: 24px;
-}
-
-#nav-login{
-    color: #ffffff;
-    font-size: 24px;
-    margin-right: 60px;
-}
-
-section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 #card{
-    width: 38rem;
-    height: auto;
-    border-radius: 15px;
-    border: 1px solid #000000;
-    margin-top: 155px;
-    box-shadow: -5px 5px 4px 0px rgba(120, 71, 172, 0.25);
-    padding: 40px;
-}
-
-h1{
-    color: #8178D4;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 32px;
-    text-align: center;
+    width: 37rem;
+    padding: 40px !important;
 }
 
 #form{
     /* background: rgba(6, 117, 71, 0.1); */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center !important;
     gap: 1.5rem;
     color: #606060;
     margin-top: 50px;
@@ -91,41 +18,30 @@ h1{
 }
 
 
-
-
 .btn-opcao {
-    width: 300px;
-    padding: 12px 0;
-    width: 12rem;
+    padding: 10px;
+    width: 13rem;
     cursor: pointer;
     font-weight: 600;
     font-size: 22px;
     border-radius: 10px;
     background: #ffffff;
     border: 1px solid #000000;
-    color: #8178D4;
-    box-shadow: -5px 5px 4px 0px rgba(120, 71, 172, 0.25);
-    margin-left: 0;
+    color:#8178D4;
     text-align: center;
+    box-shadow: -5px 5px 4px 0px rgba(120, 71, 172, 0.25);
 }
 
 
 @media (max-width: 1400px)
 {
-    nav { height: 100px; }
-    #nav-logo { font-size: 38px; }
-    a, #nav-login, form { font-size: 16px; }
-    h1 { font-size: 26px; }
-
-    #card 
-    {
-        width: 31rem;
-        margin-top: 67px;
-    }
+    #card { width: 31rem; }
+    
     .btn-opcao
     {
         font-size: 16px;
         padding: 8px;
+        width: 10rem;
     }
 
 }

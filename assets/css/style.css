@@ -16,7 +16,6 @@ body
 {
     min-height: 100vh;
     overflow-x: hidden;
-    padding-bottom: 4rem;
 }
 
 nav{
@@ -25,7 +24,7 @@ nav{
     align-items: center;
     justify-content: space-between;
     width: 100vw;
-    height: 134px;
+    height: 15vh;
     background: #8178D4;
 }
  #nav-logo{
@@ -57,13 +56,14 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 5rem 0 5rem 0;
+    min-height: 85vh;
 }
 #card{
     width: 58rem;
     /* height: 645px; */
     border-radius: 15px;
     border: 1px solid #000000;
-    margin-top: 155px;
     box-shadow: -5px 5px 4px 0px rgba(120, 71, 172, 0.25);
     padding: 40px 0px 20px 40px;
 }
@@ -93,7 +93,7 @@ form{
 
 }
 
-input[type=text], select, input[type=date], input[type=time]{
+input[type=text], select, input[type=date], input[type=time], input[type=password]{
     background:  #EEEEEE;
     width: 90%;
     /* height: 35%; */
@@ -129,7 +129,7 @@ input[type=submit]:hover{
     color: #6051eb;
 }
 
-/* #btn-continuar { width: 165px; } */
+#btn-gambiarra { background-color: #ffffff; }
 
 #campo{
     width: 50%;
@@ -178,7 +178,6 @@ input[type=submit]:hover{
     #card 
     {
         width: 49rem;
-        margin-top: 67px;
     }
 
     input[type=radio]

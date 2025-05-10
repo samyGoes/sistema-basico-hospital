@@ -16,8 +16,9 @@ require_once("../../model/Medico.php");
         <nav>
             <div id="nav-logo">Logo</div>
             <div id="nav-menu">
+                <a href="../../index.html">início</a>
                 <a href="../cadastrar/opcoes-de-cadastro.html">cadastrar</a>
-                <a href="../agendar/form-agendar-consulta.html">agendar consulta</a>
+                <a href="../agendar/form-agendar-consulta.php">agendar consulta</a>
                 <a href="gestao-horario.html">gestão de horários</a>
             </div>
             <a href="#" id="nav-login">Login</a>
@@ -66,7 +67,16 @@ require_once("../../model/Medico.php");
                         </tr>    
                         <tr>
                             <td> 09:30 </td>
-                        </tr>                 
+                        </tr>      
+                        <tr>
+                            <td> 10:00 </td>
+                        </tr>  
+                        <tr>
+                            <td> 10:30 </td>
+                        </tr>  
+                        <tr>
+                            <td> 11:00 </td>
+                        </tr>             
                     </tbody>
                 </table>
             </div>

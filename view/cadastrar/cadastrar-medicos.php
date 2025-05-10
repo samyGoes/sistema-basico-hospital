@@ -16,8 +16,9 @@ require_once("../../model/Especialidade.php");
     <nav>
         <div id="nav-logo">Logo</div>
         <div id="nav-menu">
+            <a href="../../index.html">início</a>
             <a href="opcoes-de-cadastro.html">cadastrar</a>
-            <a href="../agendar/form-agendar-consulta.html">agendar consulta</a>
+            <a href="../agendar/form-agendar-consulta.php">agendar consulta</a>
             <a href="../gestao-horario/gestao-horario.php">gestão de horários</a>
         </div>
         <a href="#" id="nav-login">Login</a>
@@ -77,11 +78,11 @@ require_once("../../model/Especialidade.php");
                     </div>
                     <div id="campo">
                         <label for="nome-logradouro">*Nome Logradouro (Rua/Avenida):</label><br>
-                        <input type="text" id="nome-logradouro" name="nome-logradouro">
+                        <input type="text" id="nome-logradouro" name="nome-logradouro" readonly>
                     </div>
                     <div id="campo">
                         <label for="bairro">*Bairro:</label><br>
-                        <input type="text" id="bairro" name="bairro">
+                        <input type="text" id="bairro" name="bairro" readonly>
                     </div>
                     <div id="campo">
                         <label for="ciade">*Cidade:</label><br>
@@ -89,14 +90,14 @@ require_once("../../model/Especialidade.php");
                     </div>
                     <div id="campo">
                         <label for="estado">*Estado:</label><br>
-                        <input type="text" id="estado" name="estado">
+                        <input type="text" id="estado" name="estado" readonly>
                     </div>
                     <div id="campo">
                         <label for="crm">*CRM:</label><br>
                         <input type="text" id="crm" name="crm">
                     </div>
                     <div id="campo">
-                        <label for="especialidade">Selecione Uma Especialidade:</label><br>
+                        <label for="especialidade">*Selecione Uma Especialidade:</label><br>
                         <select name="especialidade" id="especialidade">
                         <?php
                             $especialidade = new Especialidade();
@@ -118,15 +119,15 @@ require_once("../../model/Especialidade.php");
                         <input type="text" id="telefone1" name="telefone1">
                     </div>
                     <div id="campo">
-                        <label for="telefone2">*Telefone 2 (opcional):</label><br>
+                        <label for="telefone2">Telefone 2 (opcional):</label><br>
                         <input type="text" id="telefone2" name="telefone2">
                     </div>
                     <div id="campo">
-                        <label for="nome-convenio">*Nome Do Convênio:</label><br>
+                        <label for="nome-convenio">Nome Do Convênio:</label><br>
                         <input type="text" id="nome-convenio" name="nome-convenio">
                     </div>
                     <div id="campo">
-                        <label for="carteirinha-convenio">*N° Da Carteirinha Do Convênio:</label><br>
+                        <label for="carteirinha-convenio">N° Da Carteirinha Do Convênio:</label><br>
                         <input type="text" id="carteirinha-convenio" name="carteirinha-convenio">
                     </div>
                     <div id="campo">
@@ -135,17 +136,13 @@ require_once("../../model/Especialidade.php");
                     </div>
                     <div id="campo">
                         <label for="senha">*Senha:</label><br>
-                        <input type="text" id="senha" name="senha">
+                        <input type="password" id="senha" name="senha">
                     </div>
                     <div id="campo">
                         <label for="confi-senha">*Confirmar Senha:</label><br>
-                        <input type="text" id="confi-senha" name="confi-senha">
+                        <input type="password" id="confi-senha" name="confi-senha">
                     </div>
-                    <!-- DIV fantasma dog -->
-                    <div id="campo" style="opacity: 0%;">
-                        <label for=""></label><br>
-                        <input type="text" id="" name="">
-                    </div>
+                    
                     <div id="campo" class="campo-btn">
                         <input type="submit" name="submit-consulta" value="CADASTRAR">
                             <a id="voltar" href="opcoes-de-cadastro.html">Voltar</a>
@@ -159,12 +156,18 @@ require_once("../../model/Especialidade.php");
     <?php
         if(isset($_GET["cadastro"]))
         {
-            if(isset($_GET["cadastro"]) == "sucesso") 
-            { echo("<script>alert('Cadastro feito com sucesso!');</script>"); }
+            if($_GET["cadastro"] == "sucesso") 
+            { 
+                echo("<script> alert('Cadastro feito com sucesso!'); </script>"); 
+            }
+            else if($_GET["cadastro"] == "erro")
+            { 
+                echo("<script> alert('CPF inválido!'); </script>"); 
+            }
         }
+        
     ?>
 
-    <script src="../../assets/js/script.js"></script>
     <script src="../../assets/js/cep-auto.js"></script>
 </body>
 

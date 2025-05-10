@@ -11,8 +11,9 @@
         <nav>
             <div id="nav-logo">Logo</div>
             <div id="nav-menu">
+                <a href="../../index.html">início</a>
                 <a href="opcoes-de-cadastro.html">cadastrar</a>
-                <a href="../agendar/form-agendar-consulta.html">agendar consulta</a>
+                <a href="../agendar/form-agendar-consulta.php">agendar consulta</a>
                 <a href="../gestao-horario/gestao-horario.php">gestão de horários</a>
             </div>
             <a href="#" id="nav-login">Login</a>
@@ -40,11 +41,16 @@
         <?php
             if(isset($_GET["cadastro"]))
             {
-                if(isset($_GET["cadastro"]) == "sucesso") 
-                { echo("<script>alert('Cadastro feito com sucesso!');</script>"); }
+                if($_GET["cadastro"] == "sucesso") 
+                { 
+                    echo("<script>alert('Cadastro feito com sucesso!');</script>"); 
+                }
+                else if($_GET["cadastro"] == "erro")
+                {
+                    echo("<script>alert('Erro ao cadastrar.');</script>"); 
+                }
             }
         ?>
 
-        <script src="../../assets/js/script.js"></script>
     </body>
 </html>

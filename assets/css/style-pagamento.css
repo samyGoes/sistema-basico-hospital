@@ -1,0 +1,66 @@
+#card { padding: 40px; width: 51rem; }
+
+#form { display: flex; }
+
+form 
+{
+    width: 55%;
+    flex-direction: column;
+}
+
+#form-boleto, #form-cartao-credito, #form-cartao-debito { display: none; }
+
+#campo { width: 100%; }
+
+.campo-formas-pagamento
+{
+    width: 45% !important;
+}
+
+#opcoes-pagamento
+{
+    display: flex;
+    flex-direction: column;
+    width: 86%;
+    border: 1px solid #000;
+    border-bottom: none;
+    margin-top: 1rem;
+}
+
+span
+{
+    text-align: center;
+    padding: .4rem;
+    border-bottom: 1px solid #000;
+    cursor: pointer;
+}
+
+span:hover { background-color: #f0eaf1; }
+
+p
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+#form-pix p, #form-boleto p
+{
+    padding: 1.5rem;
+    border: 1px solid #000;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+#pix { background-color: #f0eaf1; }
+
+#mes-validade, #ano-validade { width: 45%; }
+
+input[type=text], select { width: 100%; }
+
+input[type=submit]
+{
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
+input[type=submit], #voltar { margin-right: 0; }

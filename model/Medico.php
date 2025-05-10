@@ -152,11 +152,13 @@ class Medico extends Pessoa{
 
             #region CADASTRANDO DADOS NA TABELA MÉDICO
             $queryInsertMedico = $conexao->prepare(
-                "INSERT INTO tb_medico(crm_medico, id_pessoa, id_especialidade) VALUES (?, ?, ?)"
+                "INSERT INTO tb_medico(crm_medico, id_pessoa, id_especialidade, data_admissao) VALUES (?, ?, ?, ?)"
             );
             $queryInsertMedico->bindValue(1, $this->getCrm());
             $queryInsertMedico->bindValue(2, parent::getId());
             $queryInsertMedico->bindValue(3, $this->getEspecialidade()->getId());
+            date_default_timezone_set('America/Sao_Paulo');
+            $queryInsertMedico->bindValue(4, date('Y-m-d'));
             $queryInsertMedico->execute();
             #endregion
 

@@ -12,7 +12,7 @@ function meu_callback(conteudo)
     {
         document.querySelector("#nome-logradouro").value=(conteudo.logradouro);
         document.querySelector("#bairro").value=(conteudo.bairro);
-        document.querySelector("#cidade").value=(conteudo.cidade);
+        document.querySelector("#cidade").value=(conteudo.uf);
         document.querySelector("#estado").value=(conteudo.estado);
     }
     else

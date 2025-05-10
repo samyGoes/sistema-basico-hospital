@@ -1,3 +1,9 @@
+<?php
+require_once("../../model/Pessoa.php");
+require_once("../../model/Medico.php");
+require_once("../../model/Especialidade.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -10,8 +16,9 @@
         <nav>
             <div id="nav-logo">Logo</div>
             <div id="nav-menu">
+                <a href="../../index.html">início</a>
                 <a href="../cadastrar/opcoes-de-cadastro.html">cadastrar</a>
-                <a href="form-agendar-consulta.html">agendar consulta</a>
+                <a href="form-agendar-consulta.php">agendar consulta</a>
                 <a href="../gestao-horario/gestao-horario.php">gestão de horários</a>
             </div>
             <a href="#" id="nav-login">Login</a>
@@ -25,18 +32,37 @@
                         <div id="campo">
                             <label for="especialidade">Selecione a especialidade:</label><br>                        
                             <select name="especialidade" id="especialidade">
-                                <option value="0" disabled>Selecione...</option>
-                                <option value="1">Cardiologista</option>
-                                <option value="2">Dentista</option>
+                                <option value="0" disabled>Selecione...</option> 
+                            <?php
+                                $especialidade = new Especialidade();
+                                $lista = $especialidade->listar();
+                                foreach($lista as $l)
+                                {
+                            ?>
+                                   <option value="<?php echo($l["id_especialidade"]); ?>">
+                                        <?php echo($l["desc_especialidade"]); ?>
+                                   </option>
+                            <?php
+                                }
+                            ?>
                             </select>
                         </div>
                         <div id="campo">
                             <label for="medico">Selecione o médico:</label><br>
                             <select name="medico" id="medico">
                                 <option value="0" disabled>Selecione...</option>
-                                <option value="1">Sâmily Goes</option>
-                                <option value="2">Raphael Costa</option>
-                                <option value="3">Rhayan Adriell</option>
+                            <?php
+                                $medico = new Medico();
+                                $lista = $medico->listar();
+                                foreach($lista as $l)
+                                {
+                            ?>
+                                    <option value="<?php echo($l["id_medico"]); ?>"> 
+                                        <?php echo($l["nome_pessoa"]); ?>
+                                    </option>
+                            <?php
+                                }
+                            ?>
                             </select>
                         </div>
                         <div id="campo">
@@ -58,7 +84,7 @@
                         </div>
                         <div id="campo" class="campo-btn">
                             <input type="submit" id="enviar" name="submit-consulta" value="AGENDAR">
-                            <button type="submit"> <a href="pagamento.html" id="btn-continuar">CONTINUAR</a></button>
+                            <button type="submit" id="btn-gambiarra"> <a href="pagamento.html" id="btn-continuar">CONTINUAR</a></button>
                         </div>
                     </form>
                 </div>

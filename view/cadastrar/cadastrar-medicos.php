@@ -31,15 +31,15 @@ require_once("../../model/Especialidade.php");
                 <form action="../../controller/controller-cadastrar-medicos.php" method="post">
                     <div id="campo">
                         <label for="nome">*Nome:</label><br>
-                        <input type="text" id="nome" name="nome">
+                        <input type="text" id="nome" name="nome" required>
                     </div>
                     <div id="campo">
                         <label for="rg">*RG:</label><br>
-                        <input type="text" id="rg" name="rg">
+                        <input type="text" id="rg" name="rg" required>
                     </div>
                     <div id="campo">
                         <label for="cpf">*CPF:</label><br>
-                        <input type="text" id="cpf" name="cpf">
+                        <input type="text" id="cpf" name="cpf" required>
                     </div>
                     <div id="campo">
                         <label for="sexo">*Sexo:</label><br>
@@ -66,15 +66,15 @@ require_once("../../model/Especialidade.php");
                     </div>
                     <div id="campo">
                         <label for="data-consulta">*Data De Nascimento:</label><br>
-                        <input type="date" id="data-de-nascimento" name="data-de-nascimento">
+                        <input type="date" id="data-de-nascimento" name="data-de-nascimento" required>
                     </div>
                     <div id="campo">
                         <label for="cep">*CEP:</label><br>
-                        <input type="text" id="cep" name="cep" onblur="pesquisa_cep(this.value);">
+                        <input type="text" id="cep" name="cep" onblur="pesquisa_cep(this.value);" required>
                     </div>
                     <div id="campo">
                         <label for="numero-logradouro">*Número Do Logradouro (Rua/Avenida):</label><br>
-                        <input type="text" id="numero-logradouro" name="numero-logradouro">
+                        <input type="text" id="numero-logradouro" name="numero-logradouro" required>
                     </div>
                     <div id="campo">
                         <label for="nome-logradouro">*Nome Logradouro (Rua/Avenida):</label><br>
@@ -86,7 +86,7 @@ require_once("../../model/Especialidade.php");
                     </div>
                     <div id="campo">
                         <label for="ciade">*Cidade:</label><br>
-                        <input type="text" id="cidade" name="cidade">
+                        <input type="text" id="cidade" name="cidade" readonly>
                     </div>
                     <div id="campo">
                         <label for="estado">*Estado:</label><br>
@@ -94,7 +94,7 @@ require_once("../../model/Especialidade.php");
                     </div>
                     <div id="campo">
                         <label for="crm">*CRM:</label><br>
-                        <input type="text" id="crm" name="crm">
+                        <input type="text" id="crm" name="crm" required>
                     </div>
                     <div id="campo">
                         <label for="especialidade">*Selecione Uma Especialidade:</label><br>
@@ -116,7 +116,7 @@ require_once("../../model/Especialidade.php");
                     </div>
                     <div id="campo">
                         <label for="telefone1">*Telefone 1:</label><br>
-                        <input type="text" id="telefone1" name="telefone1">
+                        <input type="text" id="telefone1" name="telefone1" required>
                     </div>
                     <div id="campo">
                         <label for="telefone2">Telefone 2 (opcional):</label><br>
@@ -132,15 +132,15 @@ require_once("../../model/Especialidade.php");
                     </div>
                     <div id="campo">
                         <label for="email">*Email:</label><br>
-                        <input type="text" id="email" name="email">
+                        <input type="text" id="email" name="email" required>
                     </div>
                     <div id="campo">
                         <label for="senha">*Senha:</label><br>
-                        <input type="password" id="senha" name="senha">
+                        <input type="password" id="senha" name="senha" required>
                     </div>
                     <div id="campo">
                         <label for="confi-senha">*Confirmar Senha:</label><br>
-                        <input type="password" id="confi-senha" name="confi-senha">
+                        <input type="password" id="confi-senha" name="confi-senha" required>
                     </div>
                     
                     <div id="campo" class="campo-btn">

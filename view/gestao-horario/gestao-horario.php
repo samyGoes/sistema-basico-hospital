@@ -1,6 +1,7 @@
 <?php
 require_once("../../model/Pessoa.php");
 require_once("../../model/Medico.php");
+require_once("../../model/HorarioMedico.php");
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ require_once("../../model/Medico.php");
             <div id="card">
                 <h1> Gestão de Horários </h1>
                 <div id="form">
-                    <form>
+                    <form action="../../controller/controller-busca-horario.php" method="post">
                         <div id="campo" class="campo-gestao-horario">
                             <p>
                                 <label for="medico">Selecione o médico:</label>  
@@ -62,21 +63,30 @@ require_once("../../model/Medico.php");
                         <th> Sexta </th>
                     </thead>
                     <tbody>
+                    <?php
+                        // $horarios = new HorarioMedico();
+                        // $id = $horarios->getMedico();
+                        // $lista = $horarios->listar($id);      
+                                         
+                        // foreach($lista as $l)
+                        // {
+                    ?>
+                            <!-- <tr>
+                                <td> <?php //echo($l["horario_hm"]); ?> </td>
+                            </tr>     -->
+                    <?php
+                        //}
+                    ?>
+                
                         <tr>
                             <td> 09:00 </td>
-                        </tr>    
+                        </tr>
                         <tr>
                             <td> 09:30 </td>
-                        </tr>      
+                        </tr>
                         <tr>
                             <td> 10:00 </td>
-                        </tr>  
-                        <tr>
-                            <td> 10:30 </td>
-                        </tr>  
-                        <tr>
-                            <td> 11:00 </td>
-                        </tr>             
+                        </tr>
                     </tbody>
                 </table>
             </div>

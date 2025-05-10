@@ -85,7 +85,7 @@ class Medico extends Pessoa{
     {
         $conexao = Conexao::conexao();
      
-        // VERIFICANDO SE O CPF JÁ NÃO ESTÁ CADASTRADO
+        #region VERIFICANDO SE O CPF JÁ NÃO ESTÁ CADASTRADO
         $querySelectCpf = $conexao->prepare(
             "SELECT cpf_pessoa * FROM tb_pessoa"
         );
@@ -102,6 +102,7 @@ class Medico extends Pessoa{
                 break;             
             }
         }
+        #endregion
 
         // CADASTRA APENAS SE O CPF FOR VÁLIDO
         if(parent::validaCpf(parent::getCpf()) == true)

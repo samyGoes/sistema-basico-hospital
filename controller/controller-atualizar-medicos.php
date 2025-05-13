@@ -8,6 +8,9 @@ try
     $medico = new Medico();
     $especialidade = new Especialidade();
 
+    echo("Id do médico: " . $_POST["id"]);
+    $medico->setId($_POST["id"]);
+
     $medico->setNome($_POST["nome"]);
     $medico->setRg($_POST["rg"]);
     $medico->setCpf($_POST["cpf"]);
@@ -38,14 +41,15 @@ try
     $medico->setNumCarteiraConvenio($_POST["carteirinha-convenio"]);
     $medico->setEmail($_POST["email"]);
     
-    $resposta = $medico->cadastrar();
+    $resposta = $medico->atualizar();
+    $reposta2 = $medico->atualizarTelefone();
 
-    if ($resposta == false) {
-        throw new Exception("Falha no método cadastrar()");
+    if ($resposta == false){
+        throw new Exception("Falha no método atualizar()");
     }
     else
     {
-        header("Location: ../view/cadastrar/medicos/cadastrar-medicos.php?cadastro=sucesso");
+        header("Location: ../view/cadastrar/medicos/lista-de-medicos.php?atualizacao=sucesso");
     } 
     exit();
 }
@@ -55,7 +59,7 @@ catch(Exception $e)
     echo($e);
     echo("</pre>");
 
-    //header("Location: ../view/cadastrar/medicos/cadastrar-medicos.php?cadastro=erro");
+    header("Location: ../view/cadastrar/medicos/atualizar-medicos.php?atualizao=erro");
     exit();
 }
 

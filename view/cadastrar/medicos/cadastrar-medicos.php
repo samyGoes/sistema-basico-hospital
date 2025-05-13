@@ -1,5 +1,5 @@
 <?php
-require_once("../../model/Especialidade.php");
+require_once("../../../model/Especialidade.php");
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ require_once("../../model/Especialidade.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
     <title>Cadastrar Médicos</title>
 </head>
 
@@ -16,10 +16,10 @@ require_once("../../model/Especialidade.php");
     <nav>
         <div id="nav-logo">Logo</div>
         <div id="nav-menu">
-            <a href="../../index.html">início</a>
-            <a href="opcoes-de-cadastro.html">cadastrar</a>
-            <a href="../agendar/form-agendar-consulta.php">agendar consulta</a>
-            <a href="../gestao-horario/gestao-horario.php">gestão de horários</a>
+            <a href="../../../index.html">início</a>
+            <a href="../opcoes-de-cadastro.html">cadastrar</a>
+            <a href="../../agendar/form-agendar-consulta.php">agendar consulta</a>
+            <a href="../../gestao-horario/gestao-horario.php">gestão de horários</a>
         </div>
         <a href="#" id="nav-login">Login</a>
     </nav>
@@ -28,7 +28,7 @@ require_once("../../model/Especialidade.php");
         <div id="card">
             <h1> Cadastrar Médicos </h1>
             <div id="form">
-                <form action="../../controller/controller-cadastrar-medicos.php" method="post">
+                <form action="../../../controller/controller-cadastrar-medicos.php" method="post">
                     <div id="campo">
                         <label for="nome">*Nome:</label><br>
                         <input type="text" id="nome" name="nome" required>
@@ -134,18 +134,10 @@ require_once("../../model/Especialidade.php");
                         <label for="email">*Email:</label><br>
                         <input type="text" id="email" name="email" required>
                     </div>
-                    <div id="campo">
-                        <label for="senha">*Senha:</label><br>
-                        <input type="password" id="senha" name="senha" required>
-                    </div>
-                    <div id="campo">
-                        <label for="confi-senha">*Confirmar Senha:</label><br>
-                        <input type="password" id="confi-senha" name="confi-senha" required>
-                    </div>
                     
                     <div id="campo" class="campo-btn">
                         <input type="submit" name="submit-consulta" value="CADASTRAR">
-                            <a id="voltar" href="opcoes-de-cadastro.html">Voltar</a>
+                            <a id="voltar" href="lista-de-medicos.php">Voltar</a>
                     </div>
                 </form>
             </div>
@@ -168,7 +160,7 @@ require_once("../../model/Especialidade.php");
         
     ?>
 
-    <script src="../../assets/js/cep-auto.js"></script>
+    <script src="../../../assets/js/cep-auto.js"></script>
 </body>
 
 </html>

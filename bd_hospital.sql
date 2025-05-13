@@ -16,9 +16,9 @@ CREATE TABLE tb_pessoa(
 	cidade_pessoa VARCHAR(50),
 	estado_pessoa VARCHAR(50),
 	email_pessoa VARCHAR(50),
-	senha_pessoa VARCHAR(50),
 	nome_convenio_pessoa VARCHAR(40),
-	numero_convenio_pessoa VARCHAR(10)
+	numero_convenio_pessoa VARCHAR(10),
+	status_pessoa VARCHAR(10)
 );
 
 CREATE TABLE tb_telefone(

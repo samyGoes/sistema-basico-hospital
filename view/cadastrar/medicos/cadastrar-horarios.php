@@ -1,6 +1,6 @@
 <?php
-require_once("../../model/Pessoa.php");
-require_once("../../model/Medico.php");
+require_once("../../../model/Pessoa.php");
+require_once("../../../model/Medico.php");
 ?>
 
 <!DOCTYPE html>
@@ -8,8 +8,8 @@ require_once("../../model/Medico.php");
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../assets/css/style.css">
-        <link rel="stylesheet" href="../../assets/css/style-horarios.css">
+        <link rel="stylesheet" href="../../../assets/css/style.css">
+        <link rel="stylesheet" href="../../../assets/css/style-horarios.css">
         <title> Agendar Consulta</title>
     </head>
     <body>
@@ -29,7 +29,7 @@ require_once("../../model/Medico.php");
                 <h1> Cadastrar Horários dos Médicos </h1>
                 <div id="form">
                     <form action="../../controller/controller-cadastrar-horarios.php" method="post">
-                        <div id="campo" class="campo-especialidade">
+                        <div id="campo" class="campo">
                             <label for="nome-especialidade">*Médico:</label>
                             <select name="medico" id="medico" required>
                                 <option value="0" disabled>Selecione...</option>
@@ -47,6 +47,11 @@ require_once("../../model/Medico.php");
                             ?>
                             </select>                     
                         </div> 
+
+                         <div id="campo" class="campo">
+                            <label for="horario">*Data:</label><br>
+                            <input type="date" id="horario" name="horario" required>
+                        </div>
 
                         <div id="campo">
                             <label for="horario">*Horário:</label><br>

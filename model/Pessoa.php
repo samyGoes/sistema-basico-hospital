@@ -22,6 +22,8 @@ class Pessoa{
     private $senha;
     private $nomeConvenio;
     private $numCarteiraConvenio;
+    private $status;
+
 
     // SETTERS
     public function setId($id)
@@ -124,6 +126,11 @@ class Pessoa{
         $this->numCarteiraConvenio = $numCarteiraConvenio;
     }
 
+     public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
 
     // GETTERS
     public function getId()
@@ -224,6 +231,11 @@ class Pessoa{
     public function getNumCarteiraConvenio()
     {
         return $this->numCarteiraConvenio;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
     }
 
     public function validaCpf($cpf)

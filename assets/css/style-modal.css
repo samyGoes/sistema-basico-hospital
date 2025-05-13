@@ -1,0 +1,12 @@
+.modal
+{
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    background-color: #fff;
+    width: 20rem;
+    /* height: 645px; */
+    border-radius: 15px;
+    border: 1px solid #000000;
+    padding: 40px;
+}

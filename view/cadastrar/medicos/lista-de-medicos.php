@@ -11,7 +11,7 @@ require_once("../../../model/Medico.php");
         <link rel="stylesheet" href="../../../assets/css/style.css">
         <link rel="stylesheet" href="../../../assets/css/style-lista-medicos.css">
         <link rel="stylesheet" href="../../../assets/css/style-modal.css">
-        <title> Gestão de Horários </title>
+        <title> Médicos Cadastrados </title>
     </head>
     <body>
 
@@ -92,7 +92,12 @@ require_once("../../../model/Medico.php");
                                         <button class="btn-desativar" type="submit"> desativar</button>
                                     </form>
                                 </td>
-                                <td></td>
+                                <td>
+                                    <form action="gestao-horario/gestao-horario.php" method="post">                                        
+                                        <input type="hidden" id="id-medico-horario" name="id-medico-horario" value="<?php echo($l["id_medico"]); ?>">
+                                        <a href="gestao-horario/gestao-horario.php"><button type="submit"> HORÁRIOS </button></a>                                        
+                                    </form>  
+                                </td>
                             </tr>    
                     <?php
                         }

@@ -54,3 +54,8 @@ function pesquisa_cep(valor)
     else { limpa_form(); }
 
 }
+
+window.onload = function()
+{
+    pesquisa_cep(document.querySelector("#cep").value);
+}

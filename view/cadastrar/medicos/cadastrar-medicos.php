@@ -152,7 +152,11 @@ require_once("../../../model/Especialidade.php");
             { 
                 echo("<script> alert('Cadastro feito com sucesso!'); </script>"); 
             }
-            else if($_GET["cadastro"] == "erro")
+            else if($_GET["cadastro"] == "erro-data")
+            { 
+                echo("<script> alert('Data de nascimento inválida!'); </script>"); 
+            }
+            else if($_GET["cadastro"] == "erro-cpf")
             { 
                 echo("<script> alert('CPF inválido!'); </script>"); 
             }

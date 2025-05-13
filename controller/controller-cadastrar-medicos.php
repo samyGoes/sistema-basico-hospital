@@ -40,8 +40,8 @@ try
     
     $resposta = $medico->cadastrar();
 
-    if ($resposta == false) {
-        throw new Exception("Falha no método cadastrar()");
+    if($resposta[0] == false) {
+        throw new Exception("Falha ao cadastrar()");
     }
     else
     {
@@ -55,7 +55,14 @@ catch(Exception $e)
     echo($e);
     echo("</pre>");
 
-    //header("Location: ../view/cadastrar/medicos/cadastrar-medicos.php?cadastro=erro");
+    if($resposta[1] == "data")
+    {
+        header("Location: ../view/cadastrar/medicos/cadastrar-medicos.php?cadastro=erro-data");
+    }
+    else if($resposta[1] == "cpf")
+    {
+        header("Location: ../view/cadastrar/medicos/cadastrar-medicos.php?cadastro=erro-cpf");
+    }
     exit();
 }
 

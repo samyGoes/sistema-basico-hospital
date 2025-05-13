@@ -83,6 +83,7 @@ CREATE TABLE tb_agenda(
 CREATE TABLE tb_horariosMedico
 (
 	id_hm INT PRIMARY KEY AUTO_INCREMENT,
+	data_hm DATE,
 	horario_hm TIME,
 	id_medico INT,
 

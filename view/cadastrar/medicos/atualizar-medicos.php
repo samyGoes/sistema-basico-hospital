@@ -48,7 +48,7 @@ require_once("../../../model/Especialidade.php");
                     </div>
                     <div id="campo">
                         <label for="cpf">*CPF:</label><br>
-                        <input type="text" id="cpf" name="cpf" value="<?php echo($lista_por_id[0]["cpf_pessoa"]); ?>" required>
+                        <input type="text" id="cpf" name="cpf" value="<?php echo($lista_por_id[0]["cpf_pessoa"]); ?>" readonly>
                     </div>
                     <div id="campo">
                         <label for="sexo">*Sexo:</label><br>
@@ -75,11 +75,11 @@ require_once("../../../model/Especialidade.php");
                     </div>
                     <div id="campo">
                         <label for="data-consulta">*Data De Nascimento:</label><br>
-                        <input type="date" id="data-de-nascimento" name="data-de-nascimento" value="<?php echo($lista_por_id[0]["data_nasc_pessoa"]); ?>" required>
+                        <input type="date" id="data-de-nascimento" name="data-de-nascimento" value="<?php echo($lista_por_id[0]["data_nasc_pessoa"]); ?>" readonly>
                     </div>
                     <div id="campo">
                         <label for="cep">*CEP:</label><br>
-                        <input type="text" id="cep" name="cep" onfocus="pesquisa_cep(this.value);" value="<?php echo($lista_por_id[0]["cep_pessoa"]); ?>" required>
+                        <input type="text" id="cep" name="cep" onblur="pesquisa_cep(this.value);" value="<?php echo($lista_por_id[0]["cep_pessoa"]); ?>" required>
                     </div>
                     <div id="campo">
                         <label for="numero-logradouro">*Número Do Logradouro (Rua/Avenida):</label><br>

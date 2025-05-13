@@ -285,10 +285,35 @@ class Pessoa{
             return true;
         }
         //echo("<br> CPF inválido");
-        echo("<script> alert('CPF inválido.'); </script>");
+        echo("<br> CPF inválido");
         return false;
     }
    
+    public function validarDataNasc($dataNasc)
+    {
+        $ano = substr($dataNasc, 0, 4);
+
+        date_default_timezone_set('America/Sao_Paulo');
+        $ano_atual = substr(date("Y-m-d"), 0, 4);
+
+        if($ano >= $ano_atual)
+        {
+            echo("<br> Data de Nascimento inválida.");
+            return false;
+        }
+        else if($ano_atual - $ano < 18)
+        {
+            echo("<br> Um menor de idade não pode se cadastrar no sistema como médico.");
+            return false;
+        }
+        else if($ano_atual - $ano >= 110)
+        {
+            echo("<br> Anciãos banidos.");
+            return false;
+        }
+        //echo($ano);
+        return true;     
+    }
 }
 
 

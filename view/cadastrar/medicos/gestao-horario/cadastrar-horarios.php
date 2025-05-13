@@ -1,6 +1,6 @@
 <?php
-require_once("../../../model/Pessoa.php");
-require_once("../../../model/Medico.php");
+require_once("../../../../model/Pessoa.php");
+require_once("../../../../model/Medico.php");
 ?>
 
 <!DOCTYPE html>
@@ -8,8 +8,8 @@ require_once("../../../model/Medico.php");
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../../../assets/css/style.css">
-        <link rel="stylesheet" href="../../../assets/css/style-horarios.css">
+        <link rel="stylesheet" href="../../../../assets/css/style.css">
+        <link rel="stylesheet" href="../../../../assets/css/style-horarios.css">
         <title> Agendar Consulta</title>
     </head>
     <body>
@@ -28,29 +28,14 @@ require_once("../../../model/Medico.php");
             <div id="card">
                 <h1> Cadastrar Horários dos Médicos </h1>
                 <div id="form">
-                    <form action="../../controller/controller-cadastrar-horarios.php" method="post">
+                    <form action="../../../../controller/controller-cadastrar-horarios.php" method="post">
                         <div id="campo" class="campo">
-                            <label for="nome-especialidade">*Médico:</label>
-                            <select name="medico" id="medico" required>
-                                <option value="0" disabled>Selecione...</option>
-                            <?php
-                                $medico = new Medico();
-                                $lista = $medico->listar();
-                                foreach($lista as $l)
-                                {
-                            ?>
-                                    <option value="<?php echo($l["id_medico"]); ?>"> 
-                                        <?php echo($l["nome_pessoa"]); ?>
-                                    </option>
-                            <?php
-                                }
-                            ?>
-                            </select>                     
-                        </div> 
-
-                         <div id="campo" class="campo">
+                            <!-- <label for="horario">*Data:</label><br> -->
+                            <input type="hidden" id="id" name="id" value="<?php echo($_POST["id-medico"]); ?>" readonly>
+                        </div>
+                        <div id="campo" class="campo">
                             <label for="horario">*Data:</label><br>
-                            <input type="date" id="horario" name="horario" required>
+                            <input type="date" id="data" name="data" required>
                         </div>
 
                         <div id="campo">
@@ -60,7 +45,7 @@ require_once("../../../model/Medico.php");
 
                          <div id="campo" class="campo-btn"> 
                             <input type="submit" id="enviar" name="submit-consulta" value="CADASTRAR">
-                            <a id="voltar" href="opcoes-de-cadastro.html">Voltar</a>
+                            <a id="voltar" href="gestao-horario.php">Voltar</a>
                         </div>
                     </form>
                 </div>

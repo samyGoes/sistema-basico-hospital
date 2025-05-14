@@ -2,6 +2,7 @@
 require_once("../../../../model/Pessoa.php");
 require_once("../../../../model/Medico.php");
 require_once("../../../../model/HorarioMedico.php");
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -30,22 +31,8 @@ require_once("../../../../model/HorarioMedico.php");
                 $horarios = new HorarioMedico();
                 $pessoa = new Pessoa();
 
-                if(isset($_POST["id-medico"]))
-                {
-                    echo("Caiu no post");
-                    $id = $_POST["id-medico"];
-                }
-                else if(isset($_GET["id-medico"]))
-                {
-                    echo("Caiu no get");
-                    $id = $_GET["id-medico"];
-                }
-                //echo("<br> ID: " . $id . "<br>");
-                $lista = $horarios->listar($id);   
-                $nome = $pessoa->listaNome($id);     
-                //print_r($lista);
-
-                //echo("Global: " . $_GLOBALS["cato"]);
+                $lista = $horarios->listar($_SESSION["id-medico"]);   
+                $nome = $pessoa->listaNome($_SESSION["id-medico"]);     
             ?>
             <div id="card">
                 <h1> Cadastrar Horários dos Médicos </h1>
@@ -53,7 +40,7 @@ require_once("../../../../model/HorarioMedico.php");
                     <form action="../../../../controller/controller-cadastrar-horarios.php" method="post">
                         <div id="campo" class="campo">
                             <label for=""> Doutor(a) <?php echo($nome); ?> </label>
-                            <input type="hidden" id="id" name="id" value="<?php echo($id); ?>" readonly>
+                            <input type="hidden" id="id" name="id" value="<?php echo($_SESSION["id-medico"]); ?>" readonly>
                         </div>
                         <div id="campo" class="campo">
                             <label for="horario">*Data:</label><br>

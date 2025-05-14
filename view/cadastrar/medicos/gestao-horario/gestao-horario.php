@@ -2,6 +2,8 @@
 require_once("../../../../model/Pessoa.php");
 require_once("../../../../model/Medico.php");
 require_once("../../../../model/HorarioMedico.php");
+
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -29,22 +31,14 @@ require_once("../../../../model/HorarioMedico.php");
             <?php
                 $horarios = new HorarioMedico();
                 $pessoa = new Pessoa();
-                $lista = $horarios->listar($_POST["id-medico-horario"]);  
-                $nome = $pessoa->listaNome($_POST["id-medico-horario"]);   
-                //print_r($lista);
+                $lista = $horarios->listar($_SESSION["id-medico"]);  
+                $nome = $pessoa->listaNome($_SESSION["id-medico"]);   
 
             ?>
             <div id="card">
                 <h1> Gestão de Horários </h1>
                 <h2> Doutor(a) <?php echo($nome); ?></h2>
-                <div id="form">
-                    <form action="cadastrar-horarios.php" method="post">
-                        <div id="campo" class="campo-gestao-horario">
-                              <input type="hidden" id="id-medico" name="id-medico" value="<?php echo($_POST["id-medico-horario"]); ?>">
-                              <a href="cadastrar-horarios.php"><button type="submit">Cadastrar novo horário</button></a>
-                        </div>
-                    </form>
-                </div>
+                <a href="cadastrar-horarios.php"><button type="submit">Cadastrar novo horário</button></a>
 
                 <table>
                     <thead>
@@ -68,6 +62,7 @@ require_once("../../../../model/HorarioMedico.php");
                     ?>
                     </tbody>
                 </table>
+                <a id="voltar" href="../lista-de-medicos.php">Voltar</a>
             </div>
         </section>
 

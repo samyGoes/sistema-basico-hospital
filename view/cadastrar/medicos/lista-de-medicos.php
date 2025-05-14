@@ -82,8 +82,8 @@ require_once("../../../model/Medico.php");
                                 <td> <?php echo($l["email_pessoa"]); ?> </td>
                                 <td> 
                                     <form action="atualizar-medicos.php" method="post">                                        
-                                        <input type="hidden" id="id" name="id" value="<?php echo($l["id_medico"]); ?>">
-                                        <a href="atualizar-medicos.php"><button type="submit"> EDITAR </button></a>                                        
+                                        <input type="hidden" id="id" name="id" value="<?php echo($_SESSION["id-medico"] = $l["id_medico"]); ?>">
+                                        <button type="submit"> EDITAR </button>                                        
                                     </form>    
                                 </td>
                                 <td>
@@ -92,9 +92,9 @@ require_once("../../../model/Medico.php");
                                     </form>
                                 </td>
                                 <td>
-                                    <form action="gestao-horario/gestao-horario.php" method="post">                                        
+                                    <form action="../../../utils/define-sessao.php" method="post">                                        
                                         <input type="hidden" id="id-medico-horario" name="id-medico-horario" value="<?php echo($l["id_medico"]); ?>">
-                                        <a href="gestao-horario/gestao-horario.php"><button type="submit"> HORÁRIOS </button></a>                                        
+                                        <button type="submit"> HORÁRIOS </button>                              
                                     </form>  
                                 </td>
                             </tr>    

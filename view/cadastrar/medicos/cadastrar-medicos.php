@@ -48,20 +48,17 @@ require_once("../../../model/Especialidade.php");
                             <option value="Masculino">Masculino</option>
                             <option value="Feminino">Feminino</option>
                             <option value="Intersexo">Intersexo</option>
-                            <option value="Prefiro Não Informar">Prefiro Não Informar</option>
                         </select>
                     </div>
                     <div id="campo">
                         <label for="genero">*Gênero:</label><br>
                         <select name="genero" id="genero">
                             <option value="0" disabled>Selecione...</option>
-                            <option value="Homem Cisgênero">Homem Cisgênero</option>
-                            <option value="Mulher Cisgênero">Mulher Cisgênero</option>
+                            <option value="Cisgênero">Cisgênero</option>
                             <option value="Homem Trans">Homem Trans</option>
                             <option value="Mulher Trans">Mulher Trans</option>
                             <option value="Pessoa Não-Binária">Pessoa Não-Binária</option>
                             <option value="Outro">Outro</option>
-                            <option value="Prefiro Não Informar">Prefiro Não Informar</option>
                         </select>
                     </div>
                     <div id="campo">

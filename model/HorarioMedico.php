@@ -61,16 +61,20 @@ class HorarioMedico{
     // OUTRAS FUNÇÕES
     public function cadastrar()
     {
-        $conexao = Conexao::conexao();
-        $queryInsert = $conexao->prepare(
-            "INSERT INTO tb_horariosMedico(horario_hm, data_hm, id_medico) VALUES (?, ?, ?)"
-        );
-        $queryInsert->bindValue(1, $this->getHorario());
-        $queryInsert->bindValue(2, $this->getData());
-        $queryInsert->bindValue(3, $this->getMedico()->getId());
-        $queryInsert->execute();
+        if($this->validarData($this->getData()) == true)
+        {
+            $conexao = Conexao::conexao();
+            $queryInsert = $conexao->prepare(
+                "INSERT INTO tb_horariosMedico(horario_hm, data_hm, id_medico) VALUES (?, ?, ?)"
+            );
+            $queryInsert->bindValue(1, $this->getHorario());
+            $queryInsert->bindValue(2, $this->getData());
+            $queryInsert->bindValue(3, $this->getMedico()->getId());
+            $queryInsert->execute();
 
-        return "Cadastro realizado com sucesso";
+            return true;
+        }
+        return false;
     }
 
     public function listar($id)
@@ -78,15 +82,30 @@ class HorarioMedico{
         $conexao = Conexao::conexao();
 
         $querySelect = $conexao->prepare(
-            "SELECT horario_hm, data_hm FROM tb_horariosMedico WHERE id_medico = :id"
+            "SELECT tb_horariosMedico.horario_hm, tb_horariosMedico.data_hm
+             FROM tb_horariosMedico, tb_medico
+             WHERE tb_horariosMedico.id_medico = tb_medico.id_medico
+                AND tb_medico.id_medico = :id"
         );
         $querySelect->bindParam(":id", $id, PDO::PARAM_STR);
         $querySelect->execute();
         $lista = $querySelect->fetchAll();
-        //print_r($lista);
-        return $lista;
+
+        return $lista;       
     }
 
+    public function validarData($data)
+    {
+        $ano = substr($data, 0, 4);
+
+        date_default_timezone_set('America/Sao_Paulo');
+        $ano_atual = substr(date("Y-m-d"), 0, 4);
+
+        if($ano >= $ano_atual)
+        { return true; }
+        else
+        { return false; }
+    }
 }
 
 ?>

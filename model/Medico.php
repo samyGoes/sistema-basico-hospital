@@ -216,7 +216,7 @@ class Medico extends Pessoa{
             "SELECT tb_medico.crm_medico, tb_pessoa.nome_pessoa, tb_pessoa.rg_pessoa, tb_pessoa.cpf_pessoa,
                     tb_pessoa.sexo_pessoa, tb_pessoa.genero_pessoa, tb_telefone.num_telefone, tb_telefone.id_telefone,
                     tb_pessoa.data_nasc_pessoa, tb_pessoa.cep_pessoa, tb_pessoa.num_log_pessoa, tb_pessoa.email_pessoa,
-                    tb_pessoa.nome_convenio_pessoa, tb_pessoa.numero_convenio_pessoa
+                    tb_pessoa.nome_convenio_pessoa, tb_pessoa.numero_convenio_pessoa, tb_medico.id_especialidade
              FROM tb_medico, tb_pessoa, tb_telefone
              WHERE tb_medico.id_pessoa = tb_pessoa.id_pessoa
                 AND tb_telefone.id_pessoa = tb_pessoa.id_pessoa

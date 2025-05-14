@@ -1,29 +1,15 @@
-const btn_cancelar = document.querySelector("#btn-cancelar");
 const modal = document.querySelector(".modal");
-const btn_desativar = document.querySelectorAll(".btn-desativar");
 
-function modalAbreFecha()
-{
-    
-    btn_desativar.forEach(btnD => {
-        btnD.addEventListener("click", (e) =>
-        {
-            e.preventDefault();
-            modal.style.display = "flex"; 
-            console.log("porra");
-        });
-    });
-   
-
-    btn_cancelar.addEventListener("click", () =>
-    {
-        modal.style.display = "none"; 
-    });
+function abreModal(event, valor)
+{   
+    console.log(valor);
+    event.preventDefault();
+    modal.style.display = "flex";
+    document.querySelector("#id-medico-desativar").value=(valor);
+ 
 }
 
-modalAbreFecha();
-
-function naoAtualiza(e)
+function fechaModal()
 {
-    e.preventDefault();
+    modal.style.display = "none"; 
 }

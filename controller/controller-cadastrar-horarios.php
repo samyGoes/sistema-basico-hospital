@@ -11,6 +11,7 @@ try
     $horarioMedico->setHorario($_POST["horario"]);
     $horarioMedico->setData($_POST["data"]);
 
+    $id = $_POST["id"];
     $medico->setId($_POST["id"]);
     $horarioMedico->setMedico($medico);
 
@@ -22,7 +23,7 @@ try
     }
     else
     {
-        header("Location: ../view/cadastrar/medicos/gestao-horario/cadastrar-horarios.php?cadastro=sucesso");
+        header("Location: ../view/cadastrar/medicos/gestao-horario/cadastrar-horarios.php?cadastro=sucesso/id-medico=$id");
     }
 }
 catch(Exception $e)

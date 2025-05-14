@@ -26,8 +26,17 @@ require_once("../../../../model/HorarioMedico.php");
         </nav>
 
         <section>
+            <?php
+                $horarios = new HorarioMedico();
+                $pessoa = new Pessoa();
+                $lista = $horarios->listar($_POST["id-medico-horario"]);  
+                $nome = $pessoa->listaNome($_POST["id-medico-horario"]);   
+                //print_r($lista);
+
+            ?>
             <div id="card">
                 <h1> Gestão de Horários </h1>
+                <h2> Doutor(a) <?php echo($nome); ?></h2>
                 <div id="form">
                     <form action="cadastrar-horarios.php" method="post">
                         <div id="campo" class="campo-gestao-horario">
@@ -47,18 +56,14 @@ require_once("../../../../model/HorarioMedico.php");
                         <th> Sexta </th>
                     </thead>
                     <tbody>
-                    <?php
-                        $horarios = new HorarioMedico();
-                        $id = $_POST["id-medico-horario"];
-                        $lista = $horarios->listar($id);      
-
+                    <?php                    
                         foreach($lista as $l)
                         {
                     ?>
                             <tr>
                                 <td> <?php echo($l["horario_hm"]); ?> </td>
                             </tr>    
-                    <?php
+                    <?php                        
                         }
                     ?>
                     </tbody>

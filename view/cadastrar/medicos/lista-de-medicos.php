@@ -15,14 +15,14 @@ require_once("../../../model/Medico.php");
     </head>
     <body>
 
-        <div class="modal">
+        <div class="modal" style="z-index: 10;">
             <p> Deseja realmente desativar este usuário? </p>
             <form action="../../../controller/controller-desativar-medicos.php" method="post">
-                <input type="submit" id="id-medico-desativar" name="id-medico-desativar" value="<?php echo($_POST["id-desativar"]); ?>">
-                <button type="button" id="btn-cancelar"> CANCELAR </button>
+                <input type="hidden" id="id-medico-desativar" name="id-medico-desativar" value="">
+                <input type="submit" value="DESATIVAR">
+                <button type="button" id="btn-cancelar" onclick="fechaModal();"> CANCELAR </button>
             </form>
         </div>
-
 
         <nav>
             <div id="nav-logo">Logo</div>
@@ -53,7 +53,7 @@ require_once("../../../model/Medico.php");
                         <th> CEP </th>
                         <th> email </th>
                         <th> editar </th>
-                        <th> excluir </th>
+                        <th> desativar </th>
                         <th> horários </th>
                     </thead>
                     <tbody>
@@ -87,9 +87,8 @@ require_once("../../../model/Medico.php");
                                     </form>    
                                 </td>
                                 <td>
-                                    <form action="lista-de-medicos.php" method="post">
-                                        <input type="hidden" id="id-desativar" name="id-desativar" value="<?php echo($l["id_medico"]); ?>">
-                                        <button class="btn-desativar" type="submit"> desativar</button>
+                                    <form id="form-desativar" action="" method="post">                                      
+                                        <button class="btn-desativar" id="id-desativar" name="id-desativar" type="submit" value="<?php echo($l["id_medico"]); ?>" onclick="abreModal(event, this.value);"> desativar </button>
                                     </form>
                                 </td>
                                 <td>
@@ -114,6 +113,13 @@ require_once("../../../model/Medico.php");
                 if($_GET["atualizacao"] == "sucesso") 
                 { 
                     echo("<script> alert('Atualização feita com sucesso!'); </script>"); 
+                }
+            }
+            else if(isset($_GET["desativacao"]))
+            {
+                if($_GET["desativacao"] == "sucesso")
+                {
+                     echo("<script> alert('Usuário desativado com sucesso'); </script>"); 
                 }
             }
         ?>

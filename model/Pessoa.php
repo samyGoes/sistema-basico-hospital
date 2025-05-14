@@ -314,6 +314,22 @@ class Pessoa{
         //echo($ano);
         return true;     
     }
+
+    public function listaNome($id)
+    {
+        $conexao = Conexao::conexao();
+
+        $querySelectNome = $conexao->prepare(
+            "SELECT tb_pessoa.nome_pessoa FROM tb_pessoa, tb_medico
+                WHERE tb_pessoa.id_pessoa = tb_medico.id_pessoa
+                AND tb_medico.id_medico = :id"
+        );
+        $querySelectNome->bindParam(":id", $id, PDO::PARAM_STR);
+        $querySelectNome->execute();
+        $nome = $querySelectNome->fetchColumn();
+
+        return $nome;
+    }
 }
 
 

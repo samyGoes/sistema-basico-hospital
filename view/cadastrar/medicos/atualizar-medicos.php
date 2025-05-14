@@ -35,7 +35,14 @@ require_once("../../../model/Especialidade.php");
                     $medico = new Medico();
                     $id_medico = $_POST["id"];
                     $lista_por_id = $medico->listar_por_id($id_medico);
-                    //echo($_POST["id"]);
+                    
+                    $sexo_cadastrado = $lista_por_id[0]["sexo_pessoa"];
+                    $sexo_opcoes = ["Masculino", "Feminino", "Intersexo"];
+
+                    $genero_cadastrado = $lista_por_id[0]["genero_pessoa"];
+                    $genero_opcoes = ["Cisgênero", "Homem Trans", "Mulher Trans", "Não-binário", "Outro"] ;
+
+                    $especialidade_cadastrada = $lista_por_id[0]["id_especialidade"];
                 ?>
 
                     <div id="campo">
@@ -54,23 +61,32 @@ require_once("../../../model/Especialidade.php");
                         <label for="sexo">*Sexo:</label><br>
                         <select name="sexo" id="sexo">
                             <option value="0" disabled>Selecione...</option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Feminino">Feminino</option>
-                            <option value="Intersexo">Intersexo</option>
-                            <option value="Prefiro Não Informar">Prefiro Não Informar</option>
+                        <?php
+                            foreach($sexo_opcoes as $opcoes)
+                            {
+                        ?>
+                                <option value="<?php echo($opcoes) ?>" <?php echo ($sexo_cadastrado == $opcoes) ? "selected" : ""; ?> > 
+                                    <?php echo($opcoes) ?>
+                                </option>
+                        <?php
+                            }
+                        ?>
                         </select>
                     </div>
                     <div id="campo">
                         <label for="genero">*Gênero:</label><br>
                         <select name="genero" id="genero">
                             <option value="0" disabled>Selecione...</option>
-                            <option value="Homem Cisgênero">Homem Cisgênero</option>
-                            <option value="Mulher Cisgênero">Mulher Cisgênero</option>
-                            <option value="Homem Trans">Homem Trans</option>
-                            <option value="Mulher Trans">Mulher Trans</option>
-                            <option value="Pessoa Não-Binária">Pessoa Não-Binária</option>
-                            <option value="Outro">Outro</option>
-                            <option value="Prefiro Não Informar">Prefiro Não Informar</option>
+                        <?php
+                            foreach($genero_opcoes as $opcoes)
+                            {
+                        ?>
+                                <option value="<?php echo($opcoes) ?>" <?php echo ($genero_cadastrado == $opcoes) ? "selected" : ""; ?> > 
+                                    <?php echo($opcoes) ?>
+                                </option>
+                        <?php
+                            }
+                        ?>        
                         </select>
                     </div>
                     <div id="campo">
@@ -115,7 +131,7 @@ require_once("../../../model/Especialidade.php");
                             foreach($lista as $l)
                             {
                         ?>
-                                <option value="<?php echo $l["id_especialidade"]; ?>">
+                                <option value="<?php echo $l["id_especialidade"]; ?>" <?php echo ($especialidade_cadastrada == $l["id_especialidade"]) ? "selected" : ""; ?> >
                                     <?php echo $l["desc_especialidade"]; ?>
                                 </option>
                         <?php

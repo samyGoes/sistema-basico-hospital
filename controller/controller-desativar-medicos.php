@@ -7,7 +7,6 @@ try
 {
     $medico = new Medico();
     $medico->setStatus("desativado");
-    //$status = $medico->getStatus();
     $medico->setId($_POST["id-medico-desativar"]);
 
     $respota = $medico->desativar();

@@ -46,6 +46,12 @@ a{
     font-size: 24px;
 }
 
+#a{
+    background: rgb(214, 214, 214);
+    color: #000000;
+    padding: 0 8px 0 8px;
+}
+
 #nav-login{
     color: #ffffff;
     font-size: 24px;

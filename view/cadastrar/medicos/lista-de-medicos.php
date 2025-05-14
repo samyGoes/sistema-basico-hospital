@@ -17,7 +17,7 @@ require_once("../../../model/Medico.php");
 
         <div class="modal" style="z-index: 10;">
             <p> Deseja realmente desativar este usuário? </p>
-            <form action="../../../controller/controller-desativar-medicos.php" method="post">
+            <form action="../../../controller/controller-desativar-medicos.php" id="formCancel" method="post">
                 <input type="hidden" id="id-medico-desativar" name="id-medico-desativar" value="">
                 <input type="submit" value="DESATIVAR">
                 <button type="button" id="btn-cancelar" onclick="fechaModal();"> CANCELAR </button>
@@ -30,7 +30,6 @@ require_once("../../../model/Medico.php");
                 <a href="../../../index.html">início</a>
                 <a href="../../cadastrar/opcoes-de-cadastro.html">cadastrar</a>
                 <a href="../../agendar/form-agendar-consulta.php">agendar consulta</a>
-                <a href="../../gestao-horario/gestao-horario.php">gestão de horários</a>
             </div>
             <a href="#" id="nav-login">Login</a>
         </nav>
@@ -39,7 +38,7 @@ require_once("../../../model/Medico.php");
             <div id="card">
                 <h1> Médicos Cadastrados </h1>
                
-                <a href="cadastrar-medicos.php" id="link-cadastro" style="color:black;"> Cadastrar novo médico </a>
+                <a href="cadastrar-medicos.php" id="a"> Cadastrar novo médico </a>
 
                 <table>
                     <thead>

@@ -2,11 +2,34 @@
 {
     display: none;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     background-color: #fff;
-    width: 20rem;
+    width: 25rem;
     /* height: 645px; */
     border-radius: 15px;
     border: 1px solid #000000;
     padding: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+#btn-cancelar{
+    padding: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    color:#8178D4;
+    box-shadow: -5px 5px 4px 0px rgba(120, 71, 172, 0.25);
+}
+
+p{
+margin-bottom: 25px;
+text-align: center;
+}
+

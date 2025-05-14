@@ -18,10 +18,9 @@ session_start();
         <nav>
             <div id="nav-logo">Logo</div>
             <div id="nav-menu">
-                <a href="../../index.html">início</a>
-                <a href="opcoes-de-cadastro.html">cadastrar</a>
-                <a href="../agendar/form-agendar-consulta.php">agendar consulta</a>
-                <a href="../gestao-horario/gestao-horario.php">gestão de horários</a>
+                <a href="../../../../index.html">início</a>
+                <a href="../../opcoes-de-cadastro.html">cadastrar</a>
+                <a href="../../../agendar/form-agendar-consulta.php">agendar consulta</a>
             </div>
             <a href="#" id="nav-login">Login</a>
         </nav>

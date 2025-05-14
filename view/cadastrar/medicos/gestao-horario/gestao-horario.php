@@ -19,10 +19,9 @@ session_start();
         <nav>
             <div id="nav-logo">Logo</div>
             <div id="nav-menu">
-                <a href="../../index.html">início</a>
-                <a href="../cadastrar/opcoes-de-cadastro.html">cadastrar</a>
-                <a href="../agendar/form-agendar-consulta.php">agendar consulta</a>
-                <a href="gestao-horario.html">gestão de horários</a>
+                <a href="../../../../index.html">início</a>
+                <a href="../../opcoes-de-cadastro.html">cadastrar</a>
+                <a href="../../../agendar/form-agendar-consulta.php">agendar consulta</a>
             </div>
             <a href="#" id="nav-login">Login</a>
         </nav>
@@ -38,7 +37,7 @@ session_start();
             <div id="card">
                 <h1> Gestão de Horários </h1>
                 <h2> Doutor(a) <?php echo($nome); ?></h2>
-                <a href="cadastrar-horarios.php"><button type="submit">Cadastrar novo horário</button></a>
+                <a id="a" href="cadastrar-horarios.php">Cadastrar novo horário</a>
 
                 <table>
                     <thead>

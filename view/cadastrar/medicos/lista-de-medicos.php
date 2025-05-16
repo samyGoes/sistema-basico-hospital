@@ -15,13 +15,15 @@ require_once("../../../model/Medico.php");
     </head>
     <body>
 
-        <div class="modal" style="z-index: 10;">
-            <p> Deseja realmente desativar este usuário? </p>
-            <form action="../../../controller/controller-desativar-medicos.php" id="formCancel" method="post">
-                <input type="hidden" id="id-medico-desativar" name="id-medico-desativar" value="">
-                <input type="submit" value="DESATIVAR">
-                <button type="button" id="btn-cancelar" onclick="fechaModal();"> CANCELAR </button>
-            </form>
+        <div class="modal-fundo">
+            <div class="modal">
+                <p> Deseja realmente desativar este usuário? </p>
+                <form action="../../../controller/controller-desativar-medicos.php" id="formCancel" method="post">
+                    <input type="hidden" id="id-medico-desativar" name="id-medico-desativar" value="">
+                    <input type="submit" value="DESATIVAR">
+                    <button type="button" id="btn-cancelar" onclick="fechaModal();"> CANCELAR </button>
+                </form>
+            </div>
         </div>
 
         <nav>
@@ -38,7 +40,7 @@ require_once("../../../model/Medico.php");
             <div id="card">
                 <h1> Médicos Cadastrados </h1>
                
-                <a href="cadastrar-medicos.php" id="a"> Cadastrar novo médico </a>
+                <a href="cadastrar-medicos.php" id="btn"> Cadastrar novo médico </a>
 
                 <table>
                     <thead>
@@ -80,20 +82,22 @@ require_once("../../../model/Medico.php");
                                 <td> <?php echo($l["cep_pessoa"]); ?> </td>
                                 <td> <?php echo($l["email_pessoa"]); ?> </td>
                                 <td> 
-                                    <form action="atualizar-medicos.php" method="post">                                        
+                                    <form class="form-btn-icon" action="atualizar-medicos.php" method="post">                                        
                                         <input type="hidden" id="id" name="id" value="<?php echo($_SESSION["id-medico"] = $l["id_medico"]); ?>">
-                                        <button type="submit"> EDITAR </button>                                        
+                                        <button type="submit"> <i class="fa-solid fa-pen-to-square"></i> </button>                                        
                                     </form>    
                                 </td>
                                 <td>
-                                    <form id="form-desativar" action="" method="post">                                      
-                                        <button class="btn-desativar" id="id-desativar" name="id-desativar" type="submit" value="<?php echo($l["id_medico"]); ?>" onclick="abreModal(event, this.value);"> desativar </button>
+                                    <form class="form-btn-icon" id="form-desativar" action="" method="post">                                      
+                                        <button class="btn-desativar" id="id-desativar" name="id-desativar" type="submit" value="<?php echo($l["id_medico"]); ?>" onclick="abreModal(event, this.value);"> 
+                                            <i class="fa-solid fa-user-slash"></i>  
+                                        </button>
                                     </form>
                                 </td>
                                 <td>
-                                    <form action="../../../utils/define-sessao.php" method="post">                                        
+                                    <form class="form-btn-icon" action="../../../utils/define-sessao.php" method="post">                                        
                                         <input type="hidden" id="id-medico-horario" name="id-medico-horario" value="<?php echo($l["id_medico"]); ?>">
-                                        <button type="submit"> HORÁRIOS </button>                              
+                                        <button type="submit"> <i class="fa-solid fa-clock"></i> </button>                              
                                     </form>  
                                 </td>
                             </tr>    
@@ -124,5 +128,6 @@ require_once("../../../model/Medico.php");
         ?>
 
         <script src="../../../assets/js/modal.js"></script>
+        <script src="https://kit.fontawesome.com/a5226a0b94.js" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -37,7 +37,7 @@ session_start();
             <div id="card">
                 <h1> Gestão de Horários </h1>
                 <h2> Doutor(a) <?php echo($nome); ?></h2>
-                <a id="a" href="cadastrar-horarios.php">Cadastrar novo horário</a>
+                <a id="btn" href="cadastrar-horarios.php">Cadastrar novo horário</a>
 
                 <table>
                     <thead>

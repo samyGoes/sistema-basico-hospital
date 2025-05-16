@@ -1,8 +1,17 @@
+#card 
+{ 
+    width: 70rem;
+    padding: 40px !important; 
+}
+
+h1 { margin-bottom: .5rem; }
+
 table
 {
     border: 1px solid #000;
     border-collapse: collapse;
     width: 100%;
+    margin-top: 1rem;
 }
 
 td, th 
@@ -13,9 +22,19 @@ td, th
     font-size: 14px;
 }
 
-#card 
-{ 
-    width: 70rem;
-    padding: 40px !important; 
+.form-btn-icon
+{
+    display: flex;
+    justify-content: center;
 }
 
+.form-btn-icon button { background: transparent; }
+
+.form-btn-icon i
+{
+    font-size: 22px;
+    color: #5f599d;
+    cursor: pointer
+}
+
+.form-btn-icon i:hover { color:rgb(112, 106, 184) }

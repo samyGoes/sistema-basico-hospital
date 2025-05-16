@@ -1,8 +1,24 @@
+#card 
+{ 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px !important; 
+}
+
+
+h2 
+{ 
+    margin-bottom: .5rem;
+    font-size: 20px; 
+}
+
 table
 {
     border: 1px solid #000;
     border-collapse: collapse;
     width: 100%;
+    margin: 1rem 0 1rem 0;
 }
 
 td, th 
@@ -12,8 +28,6 @@ td, th
     padding: .4rem;
 }
 
-#card { padding: 40px !important; }
-
 .campo-gestao-horario 
 { 
     display: flex;
@@ -22,3 +36,9 @@ td, th
 }
 
 .campo-gestao-horario p { gap: 1.5rem; }
+
+#voltar
+{
+    margin: none !important;
+    align-self: center;
+}

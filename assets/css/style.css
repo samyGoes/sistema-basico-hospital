@@ -38,7 +38,7 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 50%;
+    width: 42%;
 }
 
 a{
@@ -46,10 +46,11 @@ a{
     font-size: 24px;
 }
 
-#a{
-    background: rgb(214, 214, 214);
+#btn{
+    background: rgb(233 233 233);
     color: #000000;
     padding: 0 8px 0 8px;
+    font-size: 16px;
 }
 
 #nav-login{

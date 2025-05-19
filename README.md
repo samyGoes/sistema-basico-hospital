@@ -28,4 +28,4 @@ git clone https://github.com/samyGoes/sistema-basico-hospital.git
 ~~~cmd
 mysql -u root -p < "caminho-até-a-pasta/xampp/htdocs/sistema-basico-hospital/bd_hospital.sql"
 ~~~
-- Acesse `localhost:80` no navegador :)
+- Acesse `localhost/sistema-basico-hospital` no navegador :)

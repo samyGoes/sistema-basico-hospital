@@ -1,5 +1,5 @@
 # Sistema básico para um hospital
-![image](https://github.com/user-attachments/assets/738d6a6d-859b-4370-9218-c55b4f0a79ef)
+![image](https://github.com/user-attachments/assets/2ff3e051-5fd7-4a2b-928f-7e9fb3c3ed4d)
 
 ## Sobre o Sistema
 ### Funcionalidades
